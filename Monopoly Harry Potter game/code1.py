@@ -816,15 +816,11 @@ class connectusers:
             if msglist[0][0] in self.listofusers and msglist[0][1]=='Y':
                 self.accepts+=1
                 if self.accepts==3:
-            		messagebox.showinfo('','The selected players accepted your game request')
-            		gameplay('1366x700','./Pictures/gameboard.jpg','Monopoly: Harry Potter Edition',propertydictionary,quibblerCards,dailyProphetCards,self.socket,self.listofusers,propertyGroups)
+                	messagebox.showinfo('','The selected players accepted your game request')
+                	gameplay('1366x700','./Pictures/gameboard.jpg','Monopoly: Harry Potter Edition',propertydictionary,quibblerCards,dailyProphetCards,self.socket,self.listofusers,propertyGroups)
         self.canvas.after(1000,self.getMail)
 
     
-       
-
-
-
 class loginpage:   #this is the class for login page
     def __init__(self,wn,socket):
         self.lb1=Label(wn,text='Username').pack()
