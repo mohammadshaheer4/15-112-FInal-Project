@@ -1,3 +1,4 @@
+#open the folder 'Monopoly Harry Potter Game'
 #Run the file code 2 player
 #First log in with my account
 #username: mshaheer
