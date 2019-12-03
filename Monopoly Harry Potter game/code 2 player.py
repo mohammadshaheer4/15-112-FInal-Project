@@ -192,7 +192,6 @@ def sendMessageAll(socket,listofusers,message):
 
 class Player:
     def __init__(self,gameplay,position,money,mortgagedProperties,unmortgagedProperties,allProperties,playername,image):
-        self.flag=False
         self.quibbler=False
         self.dailyProphet=False
         self.cardImage=0
@@ -215,10 +214,6 @@ class Player:
         self.token.image=render
         self.token.place(x=self.gameplay.propertydictionary[self.position%40]['X'],y=self.gameplay.propertydictionary[self.position%40]['Y']+(self.turn*20))
         self.gameplay.canvas.after(1000,self.getMail)
-
-
-    def boolconvert(self):
-        self.flag=True
 
     def displaydailyprophetCard(self,number):
         card=self.gameplay.dailyProphetCards[number]
@@ -302,185 +297,104 @@ class Player:
             cardno=random.randint(1,16)
             if cardno==1:
                 self.displayprophetCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
-                    #prcdbtn.destroy
                 self.position=0
             if cardno==2:
                 self.displaydailyprophetCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
+               
                 self.cardImage.place_forget()
-                    #prcdbtn.destroy
                 self.money+=50
                 self.gameplay.l1.config(text=self.playername+str(self.money))
                 self.gameplay.player2.money-=50
                 self.gameplay.l2.config(text=self.gameplay.player2.playername+str(self.gameplay.player2.money))
-                #    self.flag=False
                 
             if cardno==3:
                 self.displaydailyprophetCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
-                    #prcdbtn.destroy
                 self.money-=(40*self.huts)+(115*self.manors)
                 self.gameplay.l1.config(text=self.playername+str(self.money))
-                    #self.flag=False
 
             if cardno==4:
                 self.displaydailyprophetCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
                 self.money+=10
                 self.gameplay.l1.config(text=self.playername+str(self.money))
-                    #prcdbtn.destroy
-                #self.flag=False
-
                 
             if cardno==5:
                 self.displaydailyprophetCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
-                    #prcdbtn.destroy
                 self.jailcards+=1
-                    #self.flag=False
                 
             if cardno==6:
                 self.displaydailyprophetCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
                 self.position=10
-                    #prcdbtn.destroy
-                    #self.flag=False
                 
             if cardno==7:
                 self.displaydailyprophetCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
                 self.money+=200
                 self.gameplay.l1.config(text=self.playername+str(self.money))
-                    #prcdbtn.destroy
-                    #self.flag=False
+                    
                 
             if cardno==8:
                 self.displaydailyprophetCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
-                    #prcdbtn.destroy
-                    #self.flag=False
                 self.money-=150
                 self.gameplay.l1.config(text=self.playername+str(self.money))
             if cardno==9:
                 self.displaydailyprophetCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
                 self.money+=100
                 self.gameplay.l1.config(text=self.playername+str(self.money))
-                    #prcdbtn.destroy
-                    #self.flag=False
                 
             if cardno==10:
                 self.displaydailyprophetCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
                 self.money+=100
                 self.gameplay.l1.config(text=self.playername+str(self.money))
-                    #prcdbtn.destroy
-                    #self.flag=False
                 
             if cardno==11:
                 self.displaydailyprophetCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
                 self.money-=50
                 self.gameplay.l1.config(text=self.playername+str(self.money))
-                    #prcdbtn.destroy
-                    #self.flag=False
                 
             if cardno==12:
                 self.displaydailyprophetCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
                 self.money+=20
                 self.gameplay.l1.config(text=self.playername+str(self.money))
-                    #prcdbtn.destroy
-                    #self.flag=False
                 
             if cardno==13:
                 self.displaydailyprophetCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
                 self.money+=45
                 self.gameplay.l1.config(text=self.playername+str(self.money))
-                    #prcdbtn.destroy
-                    #self.flag=False
                 
             if cardno==14:
                 self.displaydailyprophetCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
                 self.money-=100
                 self.gameplay.l1.config(text=self.playername+str(self.money))
-                    #prcdbtn.destroy
-                    #self.flag=False
                 
             if cardno==15:
                 self.displaydailyprophetCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
                 self.money+=100
                 self.gameplay.l1.config(text=self.playername+str(self.money))
-                    #prcdbtn.destroy
-                    #self.flag=False
                 
             if cardno==16:
                 self.displaydailyprophetCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
                 self.money+=25
                 self.gameplay.l1.config(text=self.playername+str(self.money))
-                    #prcdbtn.destroy
-                    #self.flag=False
-                
+
 
         if self.position==7 or self.position==22 or self.position==36:
             cardno=random.randint(1,16)
             if cardno==1:
                 self.displayquibblerCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
                 if self.position<24:
                     self.position=24
@@ -488,34 +402,19 @@ class Player:
                     self.position=24
                     self.money+=200    
                     self.gameplay.l1.config(text=self.playername+str(self.money))
-                    #prcdbtn.destroy
-                    #self.flag=False
                 
             if cardno==2:
                 self.displayquibblerCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
                 self.position=39
-                    #prcdbtn.destroy
-                    #self.flag=False
                 
             if cardno==3:
                 self.displayquibblerCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
                 self.position=0
-                    #prcdbtn.destroy
-                    #self.flag=False
                 
             if cardno==4:
                 self.displayquibblerCard(cardno)
-                #prcdbtn=Button(self.gameplay.canvas,text='Proceed',width=4,height=2,command=self.boolconvert)
-                #prcdbtn.place(x=200,y=400)
-                #if self.flag==True:
                 self.cardImage.place_forget()
                 if self.position<11:
                     self.position=11
@@ -523,8 +422,6 @@ class Player:
                     self.position=11
                     self.money+=200
                     self.gameplay.l1.config(text=self.playername+str(self.money))
-                    #prcdbtn.destroy
-                    #self.flag=False
 
             if cardno==5:
                 self.displayquibblerCard(cardno)
