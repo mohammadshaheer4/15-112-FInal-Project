@@ -569,8 +569,6 @@ class gameplay:
         self.listofusers1.remove(self.player1name)
         self.player1=Player(self,0,1500,[],[],[],self.player1name,'./Pictures/redsquare.jpg')
         self.player2=Player(self,0,1500,[],[],[],self.listofusers1[0],'./Pictures/redsquare.jpg')
-        self.player3=Player(self,0,1500,[],[],[],self.listofusers1[1],'./Pictures/redsquare.jpg')
-        self.player4=Player(self,0,1500,[],[],[],self.listofusers1[2],'./Pictures/redsquare.jpg')
         self.l1=Label(self.canvas,text=self.player1name+str(self.player1.money))
         self.l1.place(x=(965+(0*240)),y=5)
         self.t1=Listbox(self.canvas,height=15,width=35,relief=SUNKEN)
